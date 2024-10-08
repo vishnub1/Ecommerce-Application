@@ -1,6 +1,5 @@
 package com.ecommerce.project.exceptions;
 
-import jakarta.annotation.Resource;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
@@ -32,8 +31,8 @@ public class MyGlobalExceptionHandler {
         return new ResponseEntity<>(message, HttpStatus.NOT_FOUND);
     }
 
-    @ExceptionHandler(APIExcception.class)
-    public ResponseEntity<String> myAPIException(APIExcception e) {
+    @ExceptionHandler(APIException.class)
+    public ResponseEntity<String> myAPIException(APIException e) {
         String message = e.getMessage();
         return new ResponseEntity<>(message, HttpStatus.BAD_REQUEST);
     }
